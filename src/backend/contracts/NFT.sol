@@ -11,4 +11,14 @@ contract NFT is ERC721, Ownable {
   	_owner = msg.sender;
   }
 
+  function mint(string memory _tokenURI, uint _price) public onlyOwner returns (bool) {
+    uint _tokenId = totalSupply() + 1;
+    price[_tokenId] = _price;
+
+    _mint(address(this), _tokenId);
+    _setTokenURI(_tokenId, _tokenURI);
+    
+    return true;
+  }
+
 }
