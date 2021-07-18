@@ -27,3 +27,10 @@ function contract(state = {}, action) {
         return state
     }
   }
+
+  const rootReducer = combineReducers({
+    web3,
+    contract
+  })
+  
+  export default rootReducer
