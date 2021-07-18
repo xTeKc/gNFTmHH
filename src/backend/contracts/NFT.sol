@@ -23,4 +23,11 @@ contract NFT is ERC721, Ownable {
     return true;
   }
 
+  function buy(uint _id) external payable {
+    _validate(_id); //check req. for trade
+    _trade(_id); //swap nft for eth
+    
+    emit Purchase(msg.sender, price[_id], _id, tokenURI(_id));
+  }
+
 }
