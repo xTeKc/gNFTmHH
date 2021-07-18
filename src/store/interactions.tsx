@@ -52,4 +52,13 @@ export const loadAccount = async (dispatch, web3) => {
     }
   }  
 
+export const loadBalance = async (dispatch, web3, account) => {
+    try {
+      const etherBalance = await web3.eth.getBalance(account)
+      dispatch(web3BalanceLoaded((etherBalance/10**18).toFixed(5)))
+    } catch (e) {
+      console.log('Error, load balance: ', e)
+    }
+  } 
+
   
