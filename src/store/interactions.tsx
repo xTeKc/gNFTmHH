@@ -61,4 +61,15 @@ export const loadBalance = async (dispatch, web3, account) => {
     }
   } 
 
-  
+export const loadContract = async (dispatch, web3, netId) => {
+    try {
+      const contract = new web3.eth.Contract(Contract.abi, Contract.networks[netId].address)
+      dispatch(contractLoaded(contract))
+      return contract
+    } catch (e) {
+      window.alert('Wrong network!')
+      console.log('Error, load contract: ', e)
+      dispatch(contractLoaded(null))
+      return null
+    }
+  }  
