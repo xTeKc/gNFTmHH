@@ -73,3 +73,23 @@ export const loadContract = async (dispatch, web3, netId) => {
       return null
     }
   }  
+
+export const update = async (dispatch) => {
+    try{
+      let account, web3, netId, contract
+  
+      web3 = await loadWeb3(dispatch)
+      await loadNetwork(dispatch, web3)
+      account = await loadAccount(dispatch, web3)
+      netId = await web3.eth.net.getId()
+      contract = await loadContract(dispatch, web3, netId)
+    
+      await loadNftData(dispatch, contract)
+      await loadNftState(dispatch, contract)
+      if(account && contract){
+        await loadBalance(dispatch, web3, account)
+      }
+    } catch (e) {
+      console.log('Error, update data: ', e)
+    }
+  }
