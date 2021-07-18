@@ -32,3 +32,10 @@ export function contractLoaded(contract) {
       contract
     }
   }
+
+export function metadataLoaded(metadata) {
+    return {
+      type: 'METADATA_LOADED',
+      metadata
+    }
+  }
