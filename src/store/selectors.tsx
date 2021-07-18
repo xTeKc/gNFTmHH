@@ -19,3 +19,5 @@ export const contractSelector = createSelector(contract, c => c)
 const metadata = state => get(state, 'contract.metadata')
 export const metadataSelector = createSelector(metadata, m => m)
 
+const nftState = state => get(state, 'contract.state')
+export const nftStateSelector = createSelector(nftState, s => s)
