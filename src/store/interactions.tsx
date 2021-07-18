@@ -93,3 +93,22 @@ export const update = async (dispatch) => {
       console.log('Error, update data: ', e)
     }
   }
+
+//get NFTs data from nftsData.js generated while minting
+export const loadNftData = async (dispatch, contract) => {
+    try{
+      const totalSupply = await contract.methods.totalSupply().call()
+      const uri = await contract.methods.tokenURI(1).call()
+  
+      fetch(uri)
+        .then(res => res.json())
+        .then(result => {
+          if(result.image===nftsData[0].image && Number(totalSupply)===nftsData.length){
+            dispatch(metadataLoaded(nftsData))
+          }
+        });
+        console.log(nftsData)
+    } catch (e) {
+      console.log('Error, load images', e)
+    }
+  }
