@@ -15,4 +15,15 @@ function web3(state = {}, action) {
     }
   }
 
-  
+function contract(state = {}, action) {
+    switch (action.type) {
+      case 'CONTRACT_LOADED':
+        return { ...state, loaded: true, contract: action.contract }
+      case 'METADATA_LOADED':
+        return { ...state, loaded: true, metadata: action.metadata }
+      case 'NFT_STATE_LOADED':
+        return { ...state, loaded: true, state: action.state }
+      default:
+        return state
+    }
+  }
