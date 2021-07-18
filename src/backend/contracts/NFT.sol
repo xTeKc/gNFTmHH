@@ -38,4 +38,10 @@ contract NFT is ERC721, Ownable {
     require(msg.value >= price[_id], "Error, Token costs more"); //costs more
   }
 
+  function _trade(uint _id) internal {
+  	_transfer(address(this), msg.sender, _id); //nft to user
+  	_owner.transfer(msg.value); //eth to owner
+  	sold[_id] = true; //nft is sold
+  }
+
 }
