@@ -11,9 +11,11 @@
 # production
 /cache
 /build
+package-lock.json
 
 # misc
 .DS_Store
+.eslintcache
 .env
 .env.local
 .env.development.local
