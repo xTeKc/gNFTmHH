@@ -111,3 +111,14 @@ class Navbar extends Component {
       )
     }
   }
+
+  function mapStateToProps(state) {
+    return {
+      web3: web3Selector(state),
+      account: accountSelector(state),
+      network: networkSelector(state),
+      balance: balanceSelector(state)
+    }
+  }
+  
+  export default connect(mapStateToProps)(Navbar)
