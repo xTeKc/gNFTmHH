@@ -68,5 +68,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "hardhat": "^2.4.3"
+  }
 }
