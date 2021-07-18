@@ -167,3 +167,14 @@ class Main extends Component {
       }
     }
   }
+
+  function mapStateToProps(state) {
+    return {
+      metadata: metadataSelector(state),
+      contract: contractSelector(state),
+      nftState: nftStateSelector(state),
+      network: networkSelector(state)
+    }
+  }
+  
+  export default connect(mapStateToProps)(Main)
