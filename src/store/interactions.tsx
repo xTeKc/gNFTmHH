@@ -131,4 +131,27 @@ export const loadNftState = async (dispatch, contract) => {
     } catch (e) {
       console.log('Error, load NFT state', e)
     }
-  }  
+  } 
+  
+export const buyNft = async (dispatch, id, price) => {
+    try{
+      const web3 = await loadWeb3(dispatch)
+      await loadNetwork(dispatch, web3)
+      const account = await loadAccount(dispatch, web3)
+      const netId = await web3.eth.net.getId()
+      const contract = await loadContract(dispatch, web3, netId)
+  
+      await contract.methods.buy(id).send({from: account, value: price})
+        .on('receipt', async (r) => {
+          update(dispatch)
+          window.alert(`Congratulations, you've received NFT with ID: ${id}\nAddress: ${Contract.networks[netId].address}`)
+        })
+        .on('error',(error) => {
+          console.error(error)
+          window.alert(`There was an error!`)
+        })
+    } catch (e){
+      console.log('Error, buy NFT', e)
+    }
+    
+  }
