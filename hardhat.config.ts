@@ -19,3 +19,14 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   solidity: "0.8.4",
 };
+
+// paths: {
+//   sources: "./src/backend/contracts",
+//   abis: "./src/backend/",
+//   artifacts: "./src/backend/",
+//   migrations: "./src/backend/",
+//   scripts: "./src/backend/scripts",
+//   tests: "./src/backend/test",
+//   cache: "./cache"
+// }
+
