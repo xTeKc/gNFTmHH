@@ -112,3 +112,23 @@ export const loadNftData = async (dispatch, contract) => {
       console.log('Error, load images', e)
     }
   }
+
+//get data about NFT's sold state
+export const loadNftState = async (dispatch, contract) => {
+    try{
+      const tab = []
+      const totalSupply = await contract.methods.totalSupply().call()
+  
+      for(let i=0; i<totalSupply; i++){
+        const state = await contract.methods.sold(i).call()
+        if(state){
+          tab.push(await contract.methods.ownerOf(i).call()) //if sold, then add owner address
+        } else {
+          tab.push(state)
+        }
+      }
+      dispatch(nftStateLoaded(tab))
+    } catch (e) {
+      console.log('Error, load NFT state', e)
+    }
+  }  
