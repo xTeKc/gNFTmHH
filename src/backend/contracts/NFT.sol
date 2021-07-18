@@ -7,4 +7,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract NFT is ERC721, Ownable {
   address payable public _owner;
 
+  constructor() ERC721("bStash Token", "BSTK") {
+  	_owner = msg.sender;
+  }
+
 }
