@@ -24,4 +24,16 @@ export const loadWeb3 = async (dispatch) => {
     }
   }
 
+export const loadNetwork = async (dispatch, web3) => {
+    try{
+      let network = await web3.eth.net.getNetworkType()
+      network = network.charAt(0).toUpperCase()+network.slice(1)
+      dispatch(web3NetworkLoaded(network))
+      return network
+    } catch (e) {
+      dispatch(web3NetworkLoaded('Wrong network'))
+      console.log('Error, load network: ', e)
+    }
+  }
+
   
