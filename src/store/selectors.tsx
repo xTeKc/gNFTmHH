@@ -13,3 +13,6 @@ export const accountSelector = createSelector(account, a => a)
 const balance = state => get(state, 'web3.balance', 0)
 export const balanceSelector = createSelector(balance, e => e)
 
+const contract = state => get(state, 'contract.contract')
+export const contractSelector = createSelector(contract, c => c)
+
