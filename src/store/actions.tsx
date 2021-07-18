@@ -39,3 +39,10 @@ export function metadataLoaded(metadata) {
       metadata
     }
   }
+
+export function nftStateLoaded(state) {
+    return {
+      type: 'NFT_STATE_LOADED',
+      state
+    }
+  }
