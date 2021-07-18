@@ -25,3 +25,10 @@ export function web3BalanceLoaded(balance) {
       balance
     }
   }
+
+export function contractLoaded(contract) {
+    return {
+      type: 'CONTRACT_LOADED',
+      contract
+    }
+  }
