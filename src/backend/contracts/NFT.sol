@@ -9,6 +9,8 @@ contract NFT is ERC721, Ownable {
   mapping (uint => bool) public sold;
   mapping (uint => uint) public price;
 
+  event Purchase(address owner, uint price, uint id, string uri);
+
   constructor() ERC721("bStash Token", "BSTK") {
   	_owner = msg.sender;
   }
