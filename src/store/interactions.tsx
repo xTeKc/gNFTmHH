@@ -1,5 +1,5 @@
-
-
+//import { nftsData } from '../backEnd/scripts/nftsData.tsx'
+//import Contract from '../backEnd/abis/NFT.json'
 import Web3 from 'web3'
 import {
   web3Loaded,
