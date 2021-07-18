@@ -19,15 +19,18 @@ import "@nomiclabs/hardhat-waffle";
  */
 export default {
   solidity: "0.8.4",
+
+paths: {
+  sources: "./src/backend/contracts",
+  abis: "./src/backend/",
+  artifacts: "./src/backend/",
+  migrations: "./src/backend/",
+  scripts: "./src/backend/scripts",
+  tests: "./src/backend/test",
+  cache: "./cache"
+}
+
 };
 
-// paths: {
-//   sources: "./src/backend/contracts",
-//   abis: "./src/backend/",
-//   artifacts: "./src/backend/",
-//   migrations: "./src/backend/",
-//   scripts: "./src/backend/scripts",
-//   tests: "./src/backend/test",
-//   cache: "./cache"
-// }
+
 
