@@ -4,3 +4,10 @@ export function web3Loaded(connection) {
       connection
     }
   }
+
+export function web3NetworkLoaded(network) {
+    return {
+      type: 'WEB3_NETWORK_LOADED',
+      network
+    }
+  }
