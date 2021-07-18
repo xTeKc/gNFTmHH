@@ -1,6 +1,8 @@
 //import { task } from "hardhat/config";
 import "@nomiclabs/hardhat-waffle";
 import * as dotenv from 'dotenv';
+import 'babel-register';
+import 'babel-polyfill';
 
 dotenv.config();
 
@@ -31,7 +33,9 @@ paths: {
   scripts: "./src/backend/scripts",
   tests: "./src/backend/test",
   cache: "./cache"
-}
+},
+
+
 
 };
 
