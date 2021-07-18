@@ -11,3 +11,10 @@ export function web3NetworkLoaded(network) {
       network
     }
   }
+
+export function web3AccountLoaded(account) {
+    return {
+      type: 'WEB3_ACCOUNT_LOADED',
+      account
+    }
+  }
