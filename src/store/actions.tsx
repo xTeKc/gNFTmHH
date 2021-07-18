@@ -18,3 +18,10 @@ export function web3AccountLoaded(account) {
       account
     }
   }
+
+export function web3BalanceLoaded(balance) {
+    return {
+      type: 'WEB3_BALANCE_LOADED',
+      balance
+    }
+  }
