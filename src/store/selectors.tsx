@@ -16,3 +16,6 @@ export const balanceSelector = createSelector(balance, e => e)
 const contract = state => get(state, 'contract.contract')
 export const contractSelector = createSelector(contract, c => c)
 
+const metadata = state => get(state, 'contract.metadata')
+export const metadataSelector = createSelector(metadata, m => m)
+
