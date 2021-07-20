@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "NFT Marketplace",
   "author": "xTeKc",
+  "type": "module",
   "homepage": ".",
   "dependencies": {
     "@babel/preset-typescript": "^7.14.5",
